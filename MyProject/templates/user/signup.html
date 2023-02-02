@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .form control
+    {}
+</style>
+<div class="row">
+    <div class="h2 text-center">Sign <b>Up<i class=" fa fa-user"></i></b></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 p-5"style="background:#e65100;">
+
+        <form method="post" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            <b>Name</b><input type="text" name="name" required class="form-control" placeholder="Enter your name.."><br>
+            <b>DOB</b><input type="date" name="dob" required class="form-control" placeholder="Enter your date of birth.."><br>
+            <b>Gender</b><br>
+            <input type="checkbox">Male
+            <input type="checkbox">Female<br><br>
+            <b>Mobile</b><input type="number" name="mobile" required class="form-control" placeholder="Enter your mobile no.."><br>
+            <b>Email</b><input type="email" name="email" required class="form-control" placeholder="Enter your email.."><br>
+            <b>Password</b><input type="password" name="passwd" required class="form-control" placeholder="Enter your Password.."><br>
+            <b>Profesion</b><input type="name" name="proffession" required class="form-control" placeholder="Enter your Profession.."><br>
+            <b>College/Company</b><input type="name" name="college" required class="form-control" placeholder="Enter your college/company.."><br>
+            <input type="file" name="fu"><br><br>
+            <input type="submit" value="save" class="btn btn-warning"style="width:410px;">
+
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+{% endblock %}

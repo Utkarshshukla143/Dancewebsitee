@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<center><h1><b style="color:#e65100;">Sign </b>In</h1></center><br>
+<div class="row">
+    <div class="col-sm-3"></div>
+        <div class="col-sm-3 p-4"style="border:2px solid #e65100;">
+        <form method="post">
+            {% csrf_token %}
+            <b style="color:#e65100;">Email</b><input type="email" name="uname" required class="form-control" placeholder="Enter your email.."style="border:1px solid black;"><br>
+            <b>Password</b><input type="password" name="passwd" required class="form-control" placeholder="Enter your password.."style="border:1px solid black;"><br><br>
+            <center><input type="submit" value="save" class="btn btn-dark" style="width:326px;background:#e65100;border:2px solid black;"></center>
+        </form>
+    </div>
+    <div class="col-sm-3"style="background:#e65100;">
+      <center><u> <h4 class="py-4"> Welcome To Our<br>
+          Website</h4></u>
+        <h6 class="text-light">Welcome everyone as the<br> flowers are in May.</h6></center><br>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+{% endblock %}

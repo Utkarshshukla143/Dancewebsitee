@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- start slider -->
+<div class="row"style="margin-top:-46px;">
+    <div class="col-sm-12">
+        <!-- start slider -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/slider1.jpg' %}" style="max-height:500px;" class="d-block w-100"
+                         alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/slider2.jpg' %}" style="max-height:500px;" class="d-block w-100"
+                         alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/slider3.jpg' %}" style="max-height:500px;" class="d-block w-100"
+                         alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- end slider -->
+    </div>
+</div>
+<!-- end slider-->
+
+<!-- Start category-->
+<div class="row category">
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-10 py-5">
+        <div class="row">
+            {% if data %}
+            {% for x in data %}
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <img src="/{{x.cpic}}">
+                        </div>
+                        <div class="row">
+                            <b class="text-center">{{x.cname}}</b>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-sm-1"></div>
+</div>
+<!-- end category-->
+
+
+<!-- Start newproduct-->
+<div class="row newproduct">
+    <div class="col-sm-3 p-5">
+        <h5 style="padding-left:32px;" class="py-3">Latest Blogs
+            <hr>
+
+        </h5>
+        <ul style="list-style:none;">
+            <a href="" style="color:#e65100;">
+                <li>HTML TAGS</li>
+            </a><BR>
+
+            <a href="" style="color:#e65100;">
+                <li>CSS TAGS</li>
+            </a><BR>
+
+            <a href="" style="color:#e65100;">
+                <li>JS TAGS</li>
+            </a><BR>
+
+            <a href="" style="color:#e65100;">
+                <li>BOOTSTRAP TAGS</li>
+            </a><BR>
+            
+        </ul>
+    </div>
+    <div class="col-sm-9" style="background:#f5eac1;">
+        <div class="row m-5">
+            <div class="col-sm-2 m-3">
+                <div class="card" style="min-height:200px;min-width:200px;">
+                    <img src="{% static 'images/bootstrap.png' %}" alt="..."style="height:100px;width:200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">BOOTSTRAP</h5>
+                        <p class="card-text">Bootstrap is the siplest form of CSS,HTML</p>
+                        <div class="row"style="height:25px;font-size:10px;">
+                            <div class="col-sm-5">UTKARSH</div>
+                            <div class="col-sm-7">26-07-2020</div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2 m-3">
+                <div class="card" style="min-height:200px;min-width:200px;">
+                    <img src="{% static 'images/css.png' %}" alt="..."style="height:100px;width:200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">CSS</h5>
+                        <p class="card-text">It's stand for Cascading Style Sheet</p>
+                        <div class="row"style="height:25px;font-size:10px;">
+                            <div class="col-sm-5">UTKARSH</div>
+                            <div class="col-sm-7">28-07-2020</div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2 m-3">
+                <div class="card" style="min-height:200px;min-width:200px;">
+                    <img src="{% static 'images/pythonlogo.png' %}" alt="..."style="height:100px;width:200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">PYTHON</h5>
+                        <p class="card-text">It's stand for Cascading Style Sheet</p>
+                        <div class="row"style="height:25px;font-size:10px;">
+                            <div class="col-sm-5">UTKARSH</div>
+                            <div class="col-sm-7">28-07-2020</div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2 m-3">
+                <div class="card" style="min-height:200px;min-width:200px;">
+                    <img src="{% static 'images/html.png' %}" alt="..."style="height:100px;width:200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML</h5>
+                        <p class="card-text">It's stand for Cascading Style Sheet</p>
+                        <div class="row"style="height:25px;font-size:10px;">
+                            <div class="col-sm-5">UTKARSH</div>
+                            <div class="col-sm-7">30-07-2020</div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2 m-3">
+                <div class="card" style="min-height:200px;min-width:200px;">
+                    <img src="{% static 'images/java.png' %}" alt="..."style="height:100px;width:200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">JAVA</h5>
+                        <p class="card-text">It's stand for Cascading Style Sheet</p>
+                        <div class="row"style="height:25px;font-size:10px;">
+                            <div class="col-sm-5">UTKARSH</div>
+                            <div class="col-sm-7">05-08-2020</div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end newproduct-->
+    {% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row" style="margin-top:-48px;">
+
+    <div class="col-sm-3" style="background:#f2f2f2;">
+        <div class="col-sm-3 p-1">
+
+            <h5 style="padding-left:32px;" class="py-1">Latest Blogs
+                <hr>
+            </h5>
+            {% if bdetail %}
+            {% for x in bdetail %}
+
+            <ul style="list-style:none;">
+
+                <li>
+                    {% if data %}
+                    {% for x in data %}
+
+                    <a href="/user/latesblogs:id={{c.cname}}"><p style="color:#e65100;">{{x.cname}}</p></a>
+                    {% endfor %}
+                    {% endif %}
+                </li>
+
+
+            </ul>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-sm-9" style="background:#f2f2f2;border:1px solid #e9651d;">
+        <div class="row">
+            {% if bdetail %}
+            {% for x in bdetail %}
+            <div class="col-sm-2">
+                <div class="card m-2" style="min-height:200px;min-width:200px;">
+                    <img src="{{x.6}}" alt="Sorry" style="max-height:60px;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{x.3}}</h5>
+                        <p class="card-text">{{x.4}}</p>
+                        <hr>
+                        <a href="/{{x.6}}">Download<i class="fa fa-download"></i></a>
+                        <img src="{/{x.17}}" style="border-radius:50%;height:50px;width:50px;">
+                        <span style="font-size:9px;">{{x.8}}</span><br><span style="font-size:9px;">{{x.7}}</span><br>
+
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

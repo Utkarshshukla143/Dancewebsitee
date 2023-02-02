@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<center><h1><u>Create</u>&nbsp;<u style="color:#e65100;"><b style="color:#e65100;">Blogs</b></u></h1></center>
+
+<div class="row createblogs">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 p-5" style="background:#bdbdbd;BORDER:5PX SOLID #e9651d;">
+        <form method="post" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            <b>Blog Category&nbsp;&nbsp;</b><select style="border-radius:50px;border:2px solid white;background:none;"
+                                                    class="text-light form-control" name="category">
+            <option class="bg-dark">Select blog category</option>
+            {% if category %}
+            {% for x in category %}
+            <option>{{x.cname}}</option>
+            {% endfor %}
+            {% endif %}
+        </select><br><br>
+            <b>Topic</b><input type="text" name="title" required class="form-control"
+                               placeholder="Enter your name.."><br>
+            <b>Description</b>
+            <textarea class="form-control" name="discription" style="min-height:60px;resize:none;"
+                      placeholder="Enter your message.." required></textarea><br>
+            <b>Document</b><input type="file" name="attachment" required class="form-control"
+                                  placeholder="Upload Your File.."><br><br>
+            <b>Thumbnail</b><input type="file" name="thumbnail" required class="form-control"
+                                   placeholder="Upload Your Thumbnail.."><br><br>
+
+            <input type="submit" value="CREATE BLOG" class="btn btn-info" style="min-width:410px;background:#e9651d">
+
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+
+{% endblock %}
